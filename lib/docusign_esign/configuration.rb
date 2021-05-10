@@ -168,7 +168,7 @@ module DocuSign_eSign
 
     def base_url
       url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI::Parser.escape(url)
+      URI::Parser.new.escape(url)
     end
 
     # Gets API key (with prefix if set).
